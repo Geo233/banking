@@ -22,7 +22,7 @@ import CustomInput from './CustomInput';
 import { authFormSchema } from '@/lib/utils';
 import SignUp from '@/app/(auth)/sign-up/page';
 import { useRouter } from 'next/navigation';
-import { signIn, signUp } from '@/lib/actions/user.actions';
+import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.actions';
 
 
 
@@ -30,7 +30,8 @@ import { signIn, signUp } from '@/lib/actions/user.actions';
 const AuthForm = ({ type }: { type: string }) => {
     const router = useRouter();
     const [user, setUser] = useState(null);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    //const loggedInUser = await getLoggedInUser();
 
     const formSchema = authFormSchema(type);
     // 1. Define your form.
@@ -89,7 +90,11 @@ const AuthForm = ({ type }: { type: string }) => {
 
                 <div className='flex flex-col gap-1 md:gap-3'>
                     <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
-                        {user ? 'Link Account' : type === 'sign-in' ? 'Sign In' : 'Sign Up'}
+                        {user 
+                         ? 'Link Account' 
+                         : type === 'sign-in'
+                          ? 'Sign In' 
+                          : 'Sign Up'}
                         <p className='text-16 font-normal text-gray-600'>
                             {
                                 user ? 'Link your account to get started'
