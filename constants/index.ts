@@ -125,12 +125,12 @@ export const transactionCategoryStyles = {
   Travel: {
     borderColor: "border-[#0047AB]",
     backgroundColor: "bg-blue-500",
-    textColor: "text-[#027A48]",
+    textColor: "text-blue-700",
     chipBackgroundColor: "bg-[#ECFDF3]",
   },
   Success: {
-    borderColor: "",
-    backgroundColor: "bg-blue-500",
+    borderColor: "border-[#12B76A]",
+    backgroundColor: "bg-[#12B76A]",
     textColor: "text-[#027A48]",
     chipBackgroundColor: "bg-[#ECFDF3]",
   },
